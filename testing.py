@@ -1,3 +1,4 @@
 import sys
 
-print(sys.argv[1])
+for i in range(100):
+    print(sys.argv[1])
