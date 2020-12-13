@@ -3,12 +3,19 @@ const express = require('express')
 const app = express()
 const port = process.env.PORT || 8080
 app.get('/:information', (req, res) => {
+    var information_array = req.params.information.split(" ");
+    var int_array = [];
 
-    let options = {
-      args: [req.params.information]
+    for (let i = 0; i<information_array.length; i++)
+    {
+      int_array.push(parseInt(information_array[i]));
     }
 
-    PythonShell.run('testing.py', options, function (err, result) {
+    let options = {
+      args: int_array
+    }
+
+    PythonShell.run('decisiontree.py', options, function (err, result) {
         console.log(err);
         console.log(result);
         res.send(result);
