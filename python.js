@@ -7,7 +7,7 @@ app.get('/:information', (req, res) => {
     PythonShell.run('testing.py', null, function (err, result) {
         console.log(err);
         console.log(result);
-        res.send(result + req.params);
+        res.send(result + req.params.information);
     })
  
 })
