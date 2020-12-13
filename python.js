@@ -3,7 +3,7 @@ const express = require('express')
 const app = express()
 const port = process.env.PORT || 8080
 app.get('/:information', (req, res) => {
-    var information_array = (""+req.params.information).split(" ");
+    var information_array = (""+req.params.information).split(", ");
     console.log(""+req.params.information);
     var int_array = [];
 
