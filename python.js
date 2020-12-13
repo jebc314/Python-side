@@ -3,11 +3,15 @@ const express = require('express')
 const app = express()
 const port = process.env.PORT || 8080
 app.get('/:information', (req, res) => {
- 
-    PythonShell.run('testing.py', null, function (err, result) {
+
+    let options = {
+      args: [req.params.information]
+    }
+
+    PythonShell.run('testing.py', options, function (err, result) {
         console.log(err);
         console.log(result);
-        res.send(result + req.params.information);
+        res.send(result);
     })
  
 })
