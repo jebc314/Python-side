@@ -11,6 +11,8 @@ app.get('/:information', (req, res) => {
       int_array.push(parseInt(information_array[i]));
     }
 
+    console.log(int_array);
+
     let options = {
       args: int_array
     }
